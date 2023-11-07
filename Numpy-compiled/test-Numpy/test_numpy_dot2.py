@@ -12,7 +12,8 @@ print('BLAS info:')
 for kk, vv in info.items():
     print(' * ' + kk + ' ' + str(vv))
 
-size= int(input('Insert the size of the matrix to test:'))
+size=int(sys.argv[1])
+#size= int(input('Insert the size of the matrix to test:'))
 
 setup = "import numpy; x = numpy.random.random(({}, {}))".format(size,size)
 count = 10
