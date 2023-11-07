@@ -7,4 +7,5 @@ import timeit
 print("Numpy version: %s" % numpy.__version__)
 
 info = get_info('blas_opt')
-print("blas_version: ", info)
+#printing BLAS infos
+print(info)
