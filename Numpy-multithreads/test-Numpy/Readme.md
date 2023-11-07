@@ -1,4 +1,4 @@
-In this folder you fing the python scripts that we will use to test
+In this folder you can find the python scripts that we will use to test
 the different version of numpy installed.
 
 First we consider the numpy installed from source, and linked with OpenBLAS,
