@@ -45,6 +45,9 @@ Now we clone locally Numpy official Github repo:
 
 $ git clone git@github.com:numpy/numpy.git 
 
+We update the git submodule to be safe
+$ git submodule update --init
+
 We move to the latest numpy version supporting Python 3.8
  
 $ git checkout v1.24.1 
