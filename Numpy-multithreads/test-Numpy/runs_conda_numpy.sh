@@ -1,6 +1,8 @@
 #!/bin/bash
   
-source $HOME/Penv/CompiledNumpy/bin/activate
+conda activate /scratch/sdigioia/conda-env/CondaNumpy
+
+#which python
 
 array=(1000 2000 4000)
 

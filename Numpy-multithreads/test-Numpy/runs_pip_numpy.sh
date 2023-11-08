@@ -1,6 +1,6 @@
 #!/bin/bash
   
-source $HOME/Penv/CompiledNumpy/bin/activate
+source $HOME/Penv/StandardNumpy/bin/activate
 
 array=(1000 2000 4000)
 

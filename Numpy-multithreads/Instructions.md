@@ -102,13 +102,25 @@ $ deactivate
 
 # Installing Numpy with pip install from the official wheels
 
-python -m venv Penv/StandardNumpy
+To install Numpy with pip from the official wheel we need only a one-line command.
+We will create a separate virtual environment with venv to test this installattion.
 
-source Penv/StandardNumpy/bin/activate
+$ python -m venv Penv/StandardNumpy
 
-pip install numpy==1.24.1
+To enter the new virtual environment we run 
 
-deactivate
+$ source Penv/StandardNumpy/bin/activate
+
+and we can directly install Numpy, because in the pip wheel there will be all the requirements of this libraries.
+
+$ pip install numpy==1.24.1
+
+To test this installation we use the get_info.py code in the subdir test-numpy
+
+$python get_info.py
+
+Now we can deactivate the virtual enviroment
+$ deactivate
 
 # Installing Numpy with conda 
 
@@ -117,12 +129,19 @@ First we need to install Anaconda on our local machine
 To install Anaconda we need to check if requirements are installed and install if not:
 apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 
+We move to scratch area 
+$ cd /scratch/sdigioia
+
 Then we can download the bash script to install the latest Anaconda release on Linux
 wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
 
+We change the file permits to run it as an executable 
+$ chmod +x Anaconda3-2023.09-0-Linux-x86_64.sh
+
+and we run the executable:
+$./Anaconda3-2023.09-0-Linux-x86_64.sh (or also bash Anaconda3-2023.09-0-Linux-x86_64.sh)
+
 then we can launch the installer, and once finished we run:
-$ conda create -p /ictp_work/sdigioia/conda-env/CondaNumpy -c conda-forge --override-channels python=3.9 numpy=1.24.1 mkl=2019.* blas=*=*mkl
-
-
+$ conda create -p /scratch/sdigioia/conda-env/CondaNumpy -c conda-forge --override-channels python=3.9 numpy=1.24.1 mkl=2019.* blas=*=*mkl
 
 All the steps showed in this tutorial were tested on the pc "hpc6g4-dnrd-5" in the Lab.
