@@ -4,13 +4,18 @@ The multi-threaded version of [openBLAS](https://www.openblas.it) library
 is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
 
 # What is BLAS? Why is it important?
-BLAS stands for Basic Linear Algebra Subprograms. BLAS provides standard interfaces for linear algebra, including BLAS1 (vector-vector operations), BLAS2 (matrix-vector operations), and BLAS3 (matrix-matrix operations). In general, BLAS is the computational kernel ("the bottom of the food chain") in linear algebra or scientific applications. Thus, if BLAS implementation is highly optimized, the whole application can get substantial benefit.
+BLAS stands for Basic Linear Algebra Subprograms. BLAS provides standard interfaces for linear algebra, including BLAS1 (vector-vector operations), BLAS2 (matrix-vector operations), and BLAS3 (matrix-matrix operations). In general, BLAS is the computational kernel ("the bottom of the food chain") in linear algebra or scientific applications. Thus, if BLAS implementation is highly optimized, the whole application can get substantial benefits.
+
+OpenBLAS was initially only for the Loongson CPU platform. Dr. Xianyi Zhang contributed a lot of work. Since GotoBLAS was abandoned, the successor OpenBLAS is now developed as an open-source BLAS library for multiple platforms, including X86, ARMv8, MIPS, and RISC-V platforms, and is respected for its excellent portability.
+
+The parallel software group has been modernizing OpenBLAS to meet current computing needs. For example, OpenBLAS's level-3 computations were primarily optimized for large and square matrices (often considered as regular-shaped matrices). 
 
 
 Different releases of the openBLAS library are available on Github at:
 https://github.com/OpenMathLib/OpenBLAS/releases
 
 The current release of OpenBLAS is 0.3.24 version created Sep 3, 2023. You can check the changelog file at:
+https://github.com/OpenMathLib/OpenBLAS/blob/develop/Changelog.txt
 
 You can read the USER manual at:
 https://github.com/OpenMathLib/OpenBLAS/wiki/User-Manual
