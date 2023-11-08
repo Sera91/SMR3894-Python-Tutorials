@@ -1,4 +1,4 @@
-#Numpy multi-threaded
+# Numpy multi-threaded
 
 NumPy does not depend on any other Python packages. However, it does depend on accelerated linear algebra libraries - typically Intel MKL,OpenBLAS  or LAPACK. Accordingly to the selected automatic method to install numpy one of these libraries is automatically included in the installation phase. Power users may still want to know the details, because the used BLAS can affect performance, behavior and size on disk.
 
