@@ -43,7 +43,7 @@ $ which python
 
 Now we clone locally Numpy official Github repo:
 
-$ git clone git@github.com:numpy/numpy.git 
+$ git clone https://github.com/numpy/numpy.git
 
 We update the git submodule to be safe
 $ git submodule update --init
