@@ -1,4 +1,4 @@
-
+# Intro to memory_profiler
 
 
 $pip install -U memory_profiler
@@ -10,35 +10,60 @@ Note:If a python script with decorator @profile is called using -m memory_profil
 
 # Time-based memory usage reports
 
+The memory_profiler executable can be called from the terminal with the command mprof
+
 
 The available commands for mprof are:
 
-mprof run: running an executable, recording memory usage
+- mprof run: running an executable, recording memory usage
 
-mprof plot: plotting one the recorded memory usage (by default, the last one)
+- mprof plot: plotting one the recorded memory usage (by default, the last one)
 
-mprof list: listing all recorded memory usage files in a user-friendly way.
+- mprof list: listing all recorded memory usage files in a user-friendly way.
 
-mprof clean: removing all recorded memory usage files.
+- mprof clean: removing all recorded memory usage files.
 
-mprof rm: removing specific recorded memory usage files
+- mprof rm: removing specific recorded memory usage file
 
-Sometimes it is useful to have full memory usage reports as a function of time (not line-by-line) of external processes (be it Python scripts or not). In this case the executable mprof might be useful:
+For memory profiling simple code it can be enough to use the %memit magic command in ipython
 
-mprof run executable
+Sometimes it is useful to have full memory usage reports as a function of time (not line-by-line) of external processes (be it Python scripts or not). In this case the executable mprof might be useful!!
 
-Running 
+# Running mprof
+
+Launching
 
 $ mprof run –python python example.py
 
 will record timestamps when entering/leaving the profiled function
 
-and running 
 
-mprof plot --flame
+# Visualizing the report of memory profiler
+ running 
 
-will plot the result, making plots (using matplotlib) similar to these:
+$ mprof plot --flame
 
+will plot the result, making plots (using matplotlib) similar to this one:
+
+By default, the command line call is set as the graph title. If you wish to customize it, you can use the -t option to manually set the figure title.
+
+mprof plot -t ‘Recorded memory usage’
+
+You can also hide the function timestamps using the n flag, such as
+
+mprof plot -n
+
+Trend lines and its numeric slope can be plotted using the s flag, such as
+
+mprof plot -s
+
+The intended usage of the -s switch is to check the labels’ numerical slope over a significant time period. For code with:
+
+- s>0 it might mean a memory leak.
+
+- s~0 if 0 or near 0, the memory usage may be considered stable.
+
+- 's<= 0' to be interpreted depending on the expected process memory usage patterns, also might mean that the sampling period is too small.
 
 A discussion on details is available here:
 https://fa.bianp.net/blog/2014/plot-memory-usage-as-a-function-of-time/
@@ -69,5 +94,5 @@ memory_usage(proc=-1, interval=.1, timeout=None) returns the memory usage over a
 
 # Warning
 
-If your Python file imports the memory profiler from memory_profiler import profile these timestamps will not be recorded. Comment out the import, leave your functions decorated, and re-run.
+If your Python file imports the memory profiler as  "from memory_profiler import profile" these timestamps will not be recorded. Comment out the import, leave your functions decorated, and re-run.
 
