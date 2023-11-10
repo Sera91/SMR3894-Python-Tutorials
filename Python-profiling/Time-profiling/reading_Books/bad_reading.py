@@ -24,7 +24,7 @@ def ignore_duplicates(titles: list) -> list:
     return new_titles
 
 def main() -> None:
-    original_titles = read_file('novels.txt')
+    original_titles = read_file('list_files.txt')
     safe_titles = ignore_duplicates(original_titles)
     print(safe_titles)
 

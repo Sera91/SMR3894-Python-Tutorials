@@ -14,7 +14,15 @@ Ways to Profile Memory Usage Of Python Code using "memory_profiler"
     "mprun & memit cell/line Magic commands of Jupyter notebook
 
 
+#Plotting output
+After running:
+mprof run random_numbers.py
+we can plot the stats using
+mprof plot
+
 # Profiling using function decorators
 
 python example_decorator.py
+
+
 

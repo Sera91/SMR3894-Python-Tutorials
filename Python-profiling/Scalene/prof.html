@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.r1 {color: #005f00; text-decoration-color: #005f00}
+.r2 {font-weight: bold}
+.r3 {color: #000080; text-decoration-color: #000080; font-weight: bold}
+.r4 {color: #87af00; text-decoration-color: #87af00; font-weight: bold}
+.r5 {color: #005f00; text-decoration-color: #005f00; font-weight: bold}
+.r6 {color: #7f7f7f; text-decoration-color: #7f7f7f; font-weight: bold}
+.r7 {color: #000080; text-decoration-color: #000080; font-weight: bold; font-style: italic}
+.r8 {color: #87af00; text-decoration-color: #87af00; font-weight: bold; font-style: italic}
+.r9 {color: #005f00; text-decoration-color: #005f00; font-weight: bold; font-style: italic}
+.r10 {color: #7f7f7f; text-decoration-color: #7f7f7f}
+.r11 {color: #000080; text-decoration-color: #000080}
+.r12 {color: #87af00; text-decoration-color: #87af00}
+.r13 {color: #008000; text-decoration-color: #008000; background-color: #f8f8f8; font-weight: bold}
+.r14 {color: #000000; text-decoration-color: #000000; background-color: #f8f8f8}
+.r15 {color: #0000ff; text-decoration-color: #0000ff; background-color: #f8f8f8; font-weight: bold}
+.r16 {background-color: #f8f8f8}
+.r17 {color: #0000ff; text-decoration-color: #0000ff; background-color: #f8f8f8}
+.r18 {color: #800000; text-decoration-color: #800000; font-weight: bold}
+.r19 {color: #666666; text-decoration-color: #666666; background-color: #f8f8f8}
+.r20 {color: #aa22ff; text-decoration-color: #aa22ff; background-color: #f8f8f8; font-weight: bold}
+.r21 {color: #008000; text-decoration-color: #008000; background-color: #f8f8f8}
+.r22 {color: #19177c; text-decoration-color: #19177c; background-color: #f8f8f8}
+.r23 {color: #ba2121; text-decoration-color: #ba2121; background-color: #f8f8f8}
+.r24 {font-weight: bold; font-style: italic}
+.r25 {color: #000080; text-decoration-color: #000080; text-decoration: underline}
+body {
+    color: #000000;
+    background-color: #ffffff;
+}
+</style>
+</head>
+<body>
+    <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><code>                                       Memory usage: <span class="r1">▄▄▅█</span> (max:   3.25MB, growth rate: 106%)                                       
+                                     example_scalene1.py: % of time =  99.48% out of   2.08s.                                      
+       ╷       ╷       ╷      ╷       ╷       ╷       ╷               ╷       ╷                                                    
+ <span class="r2">      </span>│<span class="r3">Time</span><span class="r2">   </span>│<span class="r3">––––––</span><span class="r2"> </span>│<span class="r3">––––…</span><span class="r2"> </span>│<span class="r4">––––––</span><span class="r2"> </span>│<span class="r5">Memory</span><span class="r2"> </span>│<span class="r5">––––––</span><span class="r2"> </span>│<span class="r5">–––––––––––</span><span class="r2">    </span>│<span class="r4">Copy</span><span class="r2">   </span>│<span class="r2">                                                   </span> 
+ <span class="r2"> </span><span class="r6">Line</span><span class="r2"> </span>│<span class="r7">Python</span><span class="r2"> </span>│<span class="r7">native</span><span class="r2"> </span>│<span class="r7">syst…</span><span class="r2"> </span>│<span class="r8">GPU</span><span class="r2">    </span>│<span class="r9">Python</span><span class="r2"> </span>│<span class="r9">peak</span><span class="r2">   </span>│<span class="r9">timeline</span><span class="r5">/%</span><span class="r2">     </span>│<span class="r8">(MB/s)</span><span class="r2"> </span>│<span class="r2">example_scalene1.py                                </span> 
+╺━━━━━━┿━━━━━━━┿━━━━━━━┿━━━━━━┿━━━━━━━┿━━━━━━━┿━━━━━━━┿━━━━━━━━━━━━━━━┿━━━━━━━┿━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
+ <span class="r10">    1 </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r13">import</span><span class="r14"> </span><span class="r15">random</span><span class="r16">                                     </span>  
+ <span class="r10">    2 </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r16">                                                  </span>  
+ <span class="r10">    3 </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r13">def</span><span class="r14"> </span><span class="r17">main_func</span><span class="r14">():</span><span class="r16">                                  </span>  
+ <span class="r10">    4 </span>│<span class="r18">   63%</span><span class="r11"> </span>│<span class="r18">    5%</span><span class="r11"> </span>│<span class="r11">   5% </span>│<span class="r12">       </span>│<span class="r1">  47%  </span>│<span class="r1">    2M </span>│<span class="r18">▂▁▁▁▁▁▁▁▁  49%</span><span class="r1"> </span>│<span class="r12">       </span>│<span class="r14">    arr1 </span><span class="r19">=</span><span class="r14"> [random</span><span class="r19">.</span><span class="r14">randint(</span><span class="r19">1</span><span class="r14">,</span><span class="r19">10</span><span class="r14">) </span><span class="r13">for</span><span class="r14"> i </span><span class="r20">in</span><span class="r14"> </span><span class="r21">range</span><span class="r14">(</span><span class="r19">10</span>  
+ <span class="r10">    5 </span>│<span class="r11">   21% </span>│<span class="r11">    2% </span>│<span class="r11">   1% </span>│<span class="r12">       </span>│<span class="r1">  35%  </span>│<span class="r1">    2M </span>│<span class="r1">▄▁▁▁▁▁▁▁▁  51% </span>│<span class="r12">     5 </span>│<span class="r14">    arr2 </span><span class="r19">=</span><span class="r14"> [random</span><span class="r19">.</span><span class="r14">randint(</span><span class="r19">1</span><span class="r14">,</span><span class="r19">10</span><span class="r14">) </span><span class="r13">for</span><span class="r14"> i </span><span class="r20">in</span><span class="r14"> </span><span class="r21">range</span><span class="r14">(</span><span class="r19">10</span>  
+ <span class="r10">    6 </span>│<span class="r11">    1% </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r14">    arr3 </span><span class="r19">=</span><span class="r14"> [arr1[i]</span><span class="r19">+</span><span class="r14">arr2[i] </span><span class="r13">for</span><span class="r14"> i </span><span class="r20">in</span><span class="r14"> </span><span class="r21">range</span><span class="r14">(</span><span class="r19">100000</span><span class="r14">)</span>  
+ <span class="r10">    7 </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r14">    tot </span><span class="r19">=</span><span class="r14"> </span><span class="r21">sum</span><span class="r14">(arr3)</span><span class="r16">                               </span>  
+ <span class="r10">    8 </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r14">    </span><span class="r21">print</span><span class="r14">(tot)</span><span class="r16">                                    </span>  
+ <span class="r10">    9 </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r16">                                                  </span>  
+ <span class="r10">   10 </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r13">if</span><span class="r14"> </span><span class="r22">__name__</span><span class="r14"> </span><span class="r19">==</span><span class="r14"> </span><span class="r23">&quot;__main__&quot;</span><span class="r14">:</span><span class="r16">                        </span>  
+ <span class="r10">   11 </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r14">    main_func()</span><span class="r16">                                   </span>  
+ <span class="r10">   12 </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r16">                                                  </span>  
+ <span class="r10">      </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│                                                    
+╶──────┼───────┼───────┼──────┼───────┼───────┼───────┼───────────────┼───────┼───────────────────────────────────────────────────╴
+ <span class="r10">      </span>│<span class="r11">       </span>│<span class="r11">       </span>│<span class="r11">      </span>│<span class="r12">       </span>│<span class="r1">       </span>│<span class="r1">       </span>│<span class="r1">               </span>│<span class="r12">       </span>│<span class="r24">function summary for example_scalene1.py          </span>  
+ <span class="r10">    3 </span>│<span class="r18">   86%</span><span class="r11"> </span>│<span class="r18">    7%</span><span class="r11"> </span>│<span class="r11">   7% </span>│<span class="r12">       </span>│<span class="r1">  82%  </span>│<span class="r1">    2M </span>│<span class="r18">█▁▁▁▁▁▁▁▁ 100%</span><span class="r1"> </span>│<span class="r12">     5 </span>│<span class="r14">main_func</span><span class="r16">                                         </span>  
+       ╵       ╵       ╵      ╵       ╵       ╵       ╵               ╵       ╵                                                    
+Top AVERAGE memory consumption, by line:
+<span class="r1">(1)     4:     2 MB</span>                                                                                                                 
+Top PEAK memory consumption, by line:
+<span class="r1">(1)     5:     2 MB</span>                                                                                                                 
+<span class="r1">(2)     4:     2 MB</span>                                                                                                                 
+generated by the <a class="r25" href="https://github.com/plasma-umass/scalene">scalene</a> profiler                                                                                                   
+</code></pre>
+</body>
+</html>

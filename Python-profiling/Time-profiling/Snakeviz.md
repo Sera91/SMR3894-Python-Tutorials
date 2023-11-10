@@ -1,7 +1,7 @@
 # Intro to Snakeviz
 Snakeviz is a tool to visualize the report of the standard Python profiler cProfile.
 
-
+#How to launch Snakeviz
 
 Snakeviz generated two charts by default 
 - icicle chart
