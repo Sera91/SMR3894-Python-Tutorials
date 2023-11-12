@@ -1,6 +1,6 @@
 # The project: Audio denoising and classification
 -----------------------------------------------------------------------------
-
+## Intro
 The customer request is to create a tool to denoise audio tracks and classify them into three classes: human voices, musical instruments, and others.
 
 To denoise the audio you should not use any ML algorithm but you are suggested to adopt a specific Wiener filter. In the section "What is a Wiener filter", below, you can find a brief introduction to the theory of Wiener filters
@@ -8,7 +8,7 @@ To denoise the audio you should not use any ML algorithm but you are suggested t
 To classify the audio tracks you can perform the audio analysis in the Fourier Domain (applying FFT to the original signal).
 It's suggested to show the differences among the three classes of audio tracks by applying visualization tools to the audio signals.
 
-Once finished with this task, you can compare this classification with the one obtainable with a Convolution Neural Network (CNN) applied to the images obtained from padding the audio tracks. (For this step)
+Once finished with this task, you can compare this classification with the one obtainable with a Convolution Neural Network (CNN) applied to the images obtained from padding the audio tracks. (For this step you can take advantage of PyTorch or Keras)
 
 ## What is a Wiener Filter?
 
@@ -31,7 +31,7 @@ Now let's define 2 vectors. The first is a vector of the **past L samples of our
 $$\large
 \boldsymbol y(n)=[y(n-L+1),...,y(n-1),y(n)]$$
 
-The next vector contains the **time reversed impulse response**,
+The next vector contains the **time-reversed impulse response**,
 
 $$\large
 \boldsymbol h_W=[h_W(L-1),...,h_W(1),h_W(0)]
@@ -72,17 +72,32 @@ $$\large
 
 We can now obtain the minimum mean squared error **solution** of this matrix multiplication using the so-called Moore-Penrose **Pseudo Inverse**:
 
+$$\large
+\boldsymbol A^T \cdot \boldsymbol A \cdot \boldsymbol {h_W}^T = \boldsymbol A ^T \cdot \boldsymbol x^T
+$$
+
+Here, $\boldsymbol A ^T \cdot \boldsymbol A$ is now a square matrix, and usually invertible, such that we obtain our solution
+
+$$\large
+\boldsymbol {h_W}^T = (\boldsymbol A ^T \cdot \boldsymbol A) ^{-1} \boldsymbol A ^T \cdot \boldsymbol x^T$$
+
+This pseudo-inverse finds the column vector $\boldsymbol h^T$ which minimizes the distance to a given $\boldsymbol x$ with the matrix $\boldsymbol A$ (which contains our signal to be filtered). This $\boldsymbol h_w$ is now the **solution** we where looking for. This solution has the minimum mean squared distance to the un-noisy version of all solutions.
+
 # The data
 
-To structure and test the first class of your audio data analysis pipeline, the denoiser, a possibility is to use the clean subset of audio tracks in the Freesound mono audio track dataset, [DBR-dataset](https://zenodo.org/records/1069747) , first adding white random noise to each track, and then, trying to remove the white noise from the signal.
+To structure and test the first class of your audio data analysis pipeline, the denoiser, a possibility is to use the clean subset of audio tracks in the Freesound mono audio track dataset, [DBR-dataset](https://zenodo.org/records/1069747), first adding white random noise to each track, and then, trying to remove the white noise from the signal.
 
-Using the same dataset you can also train/test your classifier 
+Using the same dataset you can also train/test your classifier.
+
+Once tested the audio analysis pipeline on this dataset you are requested to create a small data set yourself, registering similar audio tracks and paying attention to the standardization of the input data.
 
 
 # Useful tools
-To 
+To convert the audio tracks into signals treatable with Scipy you can use the PyAudio library. 
 
 To construct the Wiener filter you can use the Scipy and Numpy libraries.
 
-To visualize the 
+To convert the audio tracks into images you can apply padding yourself, using the library previously cited, or you can use a dedicated function from the Librosa library.
+
+
 
