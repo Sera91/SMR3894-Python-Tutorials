@@ -11,8 +11,14 @@ It's suggested to show the differences among the three classes of audio tracks b
 Once finished with this task, you can compare this classification with the one obtainable with a Convolution Neural Network (CNN) applied to the images obtained from padding the audio tracks. (For this step you can take advantage of PyTorch or Keras)
 
 ## What is a Wiener Filter?
+From Wikipedia:
+"The filter, used to produce an estimate of a desired or target random process by linear time-invariant (LTI) filtering of an observed noisy process, assuming known stationary signal, noise spectra, and additive noise, was proposed by Norbert Wiener during the 1940s and published in 1949. The discrete-time equivalent of Wiener's work was derived independently by Andrey Kolmogorov and published in 1941. Hence the theory is often called the Wiener–Kolmogorov filtering theory (cf. Kriging). "
 
-We have a filter system with Wiener Filter $h_W(n)$:
+The goal of the Wiener filter is to compute a statistical estimate of an unknown signal using a related signal in input and filtering that known signal to produce the estimate as an output. For example, the known signal might consist of an unknown signal of interest that has been corrupted by additive noise. The Wiener filter can be used to filter out the noise from the corrupted signal to provide an estimate of the underlying signal of interest. The Wiener filter is based on a statistical approach, and a more detailed account of the theory is given in the article by Welch Loyd [Wiener-Hopf Theory](https://web.archive.org/web/20060920081221/http://csi.usc.edu/PDF/wienerhopf.pdf)
+
+This filter is commonly used to denoise audio signals, especially voice recordings, as a preprocessor before speech recognition. 
+
+Let's consider a filter system with Wiener Filter $h_W(n)$:
 
 $$\large
 x(n)=y(n)*h_W(n)
