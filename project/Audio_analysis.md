@@ -71,8 +71,8 @@ $$\large
 
 For the example of a filter length of $h_W$ of L=2 we have,
 
-$$\equation
- \left [ \matrix{y(0) & y(1) \\ y(1) & y(2) \\ y(2) & y(3)\\ \vdots & \vdots }  \right ] \cdot \left [ \matrix{h_W(1) \\ h_W(0) }  \right ] =\left[\matrix{ x(0) \\  x(1) \\ x(2) \\ \vdots  } \right] $$
+$$\large
+ \left [ \begin{bmatrix}{y(0) & y(1) \\ y(1) & y(2) \\ y(2) & y(3)\\ \vdots & \vdots }\end{bmatrix}  \right ] \cdot \left [ \matrix{h_W(1) \\ h_W(0) }  \right ] =\left[\begin{matrix}{ x(0) \\  x(1) \\ x(2) \\ \vdots  }\end{bmatrix} \right] $$
 
 **Observe** again that the vector $\boldsymbol h_w$ in this equation is the time-reversed impulse response of our filter. This is the **matrix multiplication** formulation of our **convolution**.
 
