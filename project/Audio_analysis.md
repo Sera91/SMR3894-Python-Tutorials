@@ -3,13 +3,74 @@
 
 The customer request is to create a tool to denoise audio tracks and classify them into three classes: human voices, musical instruments, and others.
 
-To denoise the audio you should not use any ML algorithm but you are suggested to adopt a specific Wiener filter:
+To denoise the audio you should not use any ML algorithm but you are suggested to adopt a specific Wiener filter. In the section "What is a Wiener filter", below, you can find a brief introduction to the theory of Wiener filters
 
 To classify the audio tracks you can perform the audio analysis in the Fourier Domain (applying FFT to the original signal).
 It's suggested to show the differences among the three classes of audio tracks by applying visualization tools to the audio signals.
 
-Once finished with this task, you can compare this classification with the one obtainable with a Convolution Neural Network (CNN) applied to the images obtained from padding the audio tracks. (For this step
+Once finished with this task, you can compare this classification with the one obtainable with a Convolution Neural Network (CNN) applied to the images obtained from padding the audio tracks. (For this step)
 
+## What is a Wiener Filter?
+
+We have a filter system with Wiener Filter $h_W(n)$:
+
+$$\large
+x(n)=y(n)*h_W(n)
+$$
+
+meaning we filter our distorted signal y(n) with our still unknown filter $h_W(n)$.
+
+The convolution $h_W(n)$ of (with filter length L) with y(n) can be written as  a matrix multiplication:
+
+$$\large
+x(n)=\sum_{m=0}^{L-1}y(n-m)\cdot h_W(m)
+$$
+
+Now let's define 2 vectors. The first is a vector of the **past L samples of our noisy signal y**, up to the present sample at time n, (bold face font to indicate that it is a vector)
+
+$$\large
+\boldsymbol y(n)=[y(n-L+1),...,y(n-1),y(n)]$$
+
+The next vector contains the **time reversed impulse response**,
+
+$$\large
+\boldsymbol h_W=[h_W(L-1),...,h_W(1),h_W(0)]
+$$
+
+Using those 2 vectors, we can rewrite our convolution equation above as a vector multiplication,
+
+$$\large
+x(n)= \boldsymbol y(n) \cdot \boldsymbol {h_W}^T
+$$
+
+**Observe** that $\boldsymbol h_W$ has no time index because it already contains all the samples of the time-reversed impulse response, and is constant.
+
+We can now also put the output signal x(n) into the **row vector**,
+
+$$\large
+\boldsymbol x =[x(0),x(1),...]
+$$
+
+To obtain this column vector, we simply assemble all the row vectors of our noisy signal $\boldsymbol y(n)$ into a matrix $\boldsymbol A$,
+
+
+$$\large
+\boldsymbol A =\left[\matrix{\boldsymbol y(0) \\ \boldsymbol y(1) \\ \vdots  } \right] $$
+
+With this matrix, we obtain the result of our convolution at all time steps n:
+
+$$\large
+\boldsymbol  A \cdot \boldsymbol  {h_W}^T = \boldsymbol  x^T$$
+
+
+For the example of a filter length of $h_W$ of L=2 we have,
+
+$$\large
+ \left [ \matrix{y(0) & y(1) \\ y(1) & y(2) \\ y(2) & y(3)\\ \vdots & \vdots }  \right ] \cdot \left [ \matrix{h_W(1) \\ h_W(0) }  \right ] =\left[\matrix{ x(0) \\  x(1) \\ x(2) \\ \vdots  } \right] $$
+
+**Observe** again that the vector $\boldsymbol h_w$ in this equation is the time-reversed impulse response of our filter. This is the **matrix multiplication** formulation of our **convolution**.
+
+We can now obtain the minimum mean squared error **solution** of this matrix multiplication using the so-called Moore-Penrose **Pseudo Inverse**:
 
 # The data
 
