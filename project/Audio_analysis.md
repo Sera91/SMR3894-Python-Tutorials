@@ -83,7 +83,7 @@ $$\large
 
 This pseudo-inverse finds the column vector $\boldsymbol h^T$ which minimizes the distance to a given $\boldsymbol x$ with the matrix $\boldsymbol A$ (which contains our signal to be filtered). This $\boldsymbol h_w$ is now the **solution** we where looking for. This solution has the minimum mean squared distance to the un-noisy version of all solutions.
 
-# The data
+## The data
 
 To structure and test the first class of your audio data analysis pipeline, the denoiser, a possibility is to use the clean subset of audio tracks in the Freesound mono audio track dataset, [DBR-dataset](https://zenodo.org/records/1069747), first adding white random noise to each track, and then, trying to remove the white noise from the signal.
 
@@ -92,7 +92,7 @@ Using the same dataset you can also train/test your classifier.
 Once tested the audio analysis pipeline on this dataset you are requested to create a small data set yourself, registering similar audio tracks and paying attention to the standardization of the input data.
 
 
-# Useful tools
+## Useful tools
 To convert the audio tracks into signals treatable with Scipy you can use the PyAudio library. 
 
 To construct the Wiener filter you can use the Scipy and Numpy libraries.
